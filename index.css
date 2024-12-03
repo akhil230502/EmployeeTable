@@ -1,0 +1,22 @@
+.container{
+    height: 200px;
+    width: 200px;
+}
+
+.data{
+    padding: 5px;
+}
+button{
+    margin-top: 20px;
+}
+
+.tabledata{
+    margin-top: 200px;
+    margin-left: 200px;
+}
+
+.tabledetails{
+    border: 2px solid black;
+    width: 400px;
+    height: auto;
+}
