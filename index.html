@@ -111,6 +111,20 @@
 
       const tablebody = document.getElementById("tablebody");
 
+      const rows = tablebody.getElementsByTagName("tr");
+
+      for (let i = 0; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName("td");
+        if (
+          cells[0].textContent === name ||
+          cells[1].textContent === eid ||
+          cells[3].textContent === contact
+        ) {
+          alert("duplicate data found,re-entry the data");
+          return false;
+        }
+      }
+
       const newData = tablebody.insertRow();
 
       newData.innerHTML = `<td>${name}</td><td>${eid}</td> <td>${dept}</td> <td>${contact}</td> <td><button onClick="editData(this)">Edit</button></td>`;
@@ -125,12 +139,12 @@
 
     function editData(button) {
       const rows = button.parentNode.parentNode;
-      const cells =rows.getElementsByTagName("td");
+      const cells = rows.getElementsByTagName("td");
 
       document.getElementById("name").value = cells[0].textContent;
       document.getElementById("eid").value = cells[1].textContent;
       document.getElementById("dept").value = cells[2].textContent;
-      document.getElementById("contact").value =cells[3].textContent;
+      document.getElementById("contact").value = cells[3].textContent;
 
       rows.remove();
     }
